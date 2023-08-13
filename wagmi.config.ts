@@ -1,7 +1,6 @@
 import { defineConfig } from "@wagmi/cli";
 import { foundry, react } from "@wagmi/cli/plugins";
 import * as chains from "wagmi/chains";
-import { ATTESTATION_STATION_ADDRESS } from "@eth-optimism/atst";
 
 /**
  * Wagmi cli will automatically generate react hooks from your forge contracts
@@ -26,13 +25,7 @@ export default defineConfig({
      * @see https://wagmi.sh/cli/plugins/foundry
      */
     foundry({
-      deployments: {
-        AttestationStation: {
-          [chains.optimism.id]: ATTESTATION_STATION_ADDRESS,
-          [chains.optimismGoerli.id]: ATTESTATION_STATION_ADDRESS,
-          [chains.foundry.id]: ATTESTATION_STATION_ADDRESS,
-        },
-      },
+      deployments: {},
     }),
     /**
      * Generates react hooks from your abis

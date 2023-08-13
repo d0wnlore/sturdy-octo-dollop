@@ -1,8 +1,36 @@
 import { configureChains, createConfig } from "wagmi";
-import { foundry, optimismGoerli, baseGoerli, zoraTestnet } from "wagmi/chains";
+import {
+  foundry,
+  optimismGoerli,
+  baseGoerli,
+  zoraTestnet,
+  sepolia,
+} from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { getDefaultWallets } from "@rainbow-me/rainbowkit";
+
+const modeTestnet = {
+  id: 919,
+  name: "Mode Testnet",
+  network: "mode-testnet",
+  nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ["https://sepolia.mode.network"],
+    },
+    public: {
+      http: ["https://sepolia.mode.network"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Blockscout",
+      url: "https://sepolia.explorer.mode.network",
+    },
+  },
+  testnet: true,
+};
 
 /**
  * Tell wagmi which chains you want to support
@@ -10,7 +38,7 @@ import { getDefaultWallets } from "@rainbow-me/rainbowkit";
  * @see https://wagmi.sh/react/providers/configuring-chains
  */
 const { chains, publicClient } = configureChains(
-  [optimismGoerli, baseGoerli, zoraTestnet, foundry],
+  [optimismGoerli, baseGoerli, zoraTestnet, sepolia, foundry, modeTestnet],
   [
     /**
      * Uncomment this line to use Alchemy as your provider

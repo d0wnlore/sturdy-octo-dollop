@@ -16,15 +16,17 @@
     "wagmi": "wagmi generate"
   },
   "dependencies": {
-    "@eth-optimism/atst": "^0.0.0-20230306200511",
     "@eth-optimism/contracts-bedrock": "^0.12.1",
     "@eth-optimism/contracts-periphery": "^1.0.7",
     "@eth-optimism/sdk": "0.0.0-20230301065104",
+    "@ethereum-attestation-service/eas-sdk": "1.0.0-beta.0",
     "@openzeppelin/contracts": "4.7.3",
     "@openzeppelin/contracts-upgradeable": "4.7.3",
     "@rainbow-me/rainbowkit": "^1.0.7",
     "@wagmi/cli": "^1.3.0",
+    "@wagmi/core": "^1.3.9",
     "buffer": "^6.0.3",
+    "ethers": "5.7.2",
     "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
